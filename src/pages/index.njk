@@ -1,0 +1,42 @@
+{% set title = "首頁" %}
+{% set page_class = "page-home" %}
+{% extends "_layout.njk" %}
+
+
+{% block content %}
+<!-- =========================================================================-->
+<!-- 頁面內容  START-->
+<!-- =========================================================================-->
+<div class="page_main {{ page_class }}">
+    {% set section_name = "home-header" %}
+    <section class="page_section {{section_name}}">
+        {% include "../pages_templates/" + section_name + ".njk" %}
+    </section>
+    {% set section_name = "home-form" %}
+    <section class="page_section {{section_name}}">
+        {% include "../pages_templates/" + section_name + ".njk" %}
+    </section>
+    {% set section_name = "home-list" %}
+    <section class="page_section {{section_name}}">
+        {% include "../pages_templates/" + section_name + ".njk" %}
+    </section>
+    {% set section_name = "home-lighthouse" %}
+    <section class="page_section {{section_name}}">
+        {% include "../pages_templates/" + section_name + ".njk" %}
+    </section>
+    {% set section_name = "home-footer" %}
+    <section class="page_section {{section_name}}">
+        {% include "../pages_templates/" + section_name + ".njk" %}
+    </section>
+</div>
+
+<!-- /.page_main END  !! -->
+<!-- =========================================================================-->
+<!-- 頁面內容  END  !!-->
+<!-- =========================================================================-->
+
+{% endblock %}
+
+{% block page_script %}
+{# <script src="public/js/page/home.js?v={{ VERSION }}"></script> #}
+{% endblock %}

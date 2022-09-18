@@ -1,0 +1,46 @@
+$base-font-size : 16px;
+
+@import "variable/color";
+@import "variable/font-family";
+@import "variable/layout";
+@import "variable/text";
+@import "variable/shadow";
+@import "variable/breakpoints";
+
+
+$ratio: 0.75;
+
+// > btn
+$btn-padding-y: 0.85rem;
+$btn-padding-x: 2.13rem;
+$btn-padding-y-sm: 0.5rem;
+$btn-padding-x-sm: 1.6rem;
+$btn-padding-y-md: 0.7rem;
+$btn-padding-x-md: 1.6rem;
+$btn-padding-y-lg: 1rem;
+$btn-padding-x-lg: 2.4rem;
+$btn-border-radius: 3px;
+
+$border-radius-base: 4px;
+
+
+// > easing
+$easing1: cubic-bezier(0.4, 0, 0.2, 1);
+$easing2: cubic-bezier(0.7, 0, 0.3, 1);
+$easeInOutCubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+$easeInOutCubic2: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$easeInOutCubic3: cubic-bezier(0.12, 0.49, 0.17, 0.87);
+$easing3: cubic-bezier(.87, -.41, .19, 1.44);
+
+// > transition
+$transition-base: all 0.3s ease-in-out;
+
+
+// > iframe_rwd
+$iframe_rwd-w: 400;
+$iframe_rwd-h: 200;
+
+$input-height-border: 0;
+$input-height: calc(#{$input-height-inner} + #{$input-height-border}) !default;
+
+

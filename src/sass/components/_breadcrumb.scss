@@ -1,0 +1,8 @@
+.#{$PROJECT_NAME}_breadcrumb {
+	color: color("Gray-03");
+	&-link {
+		@include txt-("small");
+		color: color("Gray-03");
+	}
+}
+

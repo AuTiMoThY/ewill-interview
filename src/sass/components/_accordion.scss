@@ -1,0 +1,68 @@
+.accordion {
+    &-item {
+        &.js-open {
+            .accordion-content {
+                max-height: 500px;
+            }
+
+            .accordion-ctrl {
+                .ctrl-icon::after {
+                    transform: translateX(-50%) scaleY(0);
+                }
+            }
+        }
+    }
+
+    &-ctrl {
+        position: relative;
+        cursor: pointer;
+        .title {
+            padding-top: 24px;
+            padding-bottom: 24px;
+
+            padding-right: 2rem;
+            @include md-sm {
+            }
+        }
+
+        .ctrl-icon {
+            @include absolute(50%, 1rem);
+            transform: translateY(-50%);
+            @include wh(10);
+
+            &::before, &::after {
+                @include psudoClass;
+                @include absolute(50%, $L:0);
+                transform: translateY(-50%);
+                @include wh(100%, 2);
+                border-radius: 2px;
+                background-color: color('grey2');
+            }
+
+            &::after {
+                width: 2px;
+                height: 100%;
+
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                transition: $transition-base;
+            }
+        }
+    }
+
+    &-content {
+        max-height: 0;
+        overflow: hidden;
+
+        transition: $transition-base;
+
+        .txt {
+            padding-bottom: 24px;
+        }
+    }
+
+
+}
+
+

@@ -1,0 +1,84 @@
+// > global
+
+// @font-face {
+// 	font-family: 'ttwcenmt';
+// 	src: url('./ttwcenmt.eot');
+// 	src: local('ttwcenmt'), url('./ttwcenmt.woff') format('woff'), url('./ttwcenmt.ttf') format('truetype');
+// }
+
+// :defined { display: block; }
+
+
+@font-face {
+    font-family: GenSekiGothic;
+    src: url(../fonts/GenSekiGothic-R.woff) format('woff');
+}
+@font-face {
+    font-family: GenSekiGothicL;
+    src: url(../fonts/GenSekiGothic-L.woff) format('woff');
+}
+@font-face {
+    font-family: GenSekiGothicM;
+    src: url(../fonts/GenSekiGothic-M.woff) format('woff');
+}
+@font-face {
+    font-family: GenSekiGothicB;
+    src: url(../fonts/GenSekiGothic-B.woff) format('woff');
+}
+@font-face {
+    font-family: GenSekiGothicH;
+    src: url(../fonts/GenSekiGothic-H.woff) format('woff');
+}
+
+p.txt:last-of-type {
+	margin-bottom: 0;
+}
+
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+
+
+.td-u {
+	text-decoration: underline;
+}
+
+.inner-table {
+	display: table;
+}
+
+.inner-tablerow {
+	display: table-row;
+}
+
+.inner-tablecell {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+
+
+
+select {
+	appearance: none;
+	@include media-breakpoint-down(xs){
+		appearance: inherit;
+	};
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+

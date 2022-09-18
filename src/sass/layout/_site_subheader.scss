@@ -1,0 +1,113 @@
+
+.site_subheader {
+    @include fixed($header_h, $L:0);
+    z-index: 100;
+    width: 100%;
+    background-color: #F9F9FA;
+    padding: 40px;
+
+    top: -100%;
+    z-index: -1;
+    opacity: 0;
+
+    transition: $transition-base;
+
+    @include media-breakpoint-up(lg) {
+		.js-scrolling & {
+			top: 100px;
+		}
+	}
+
+    &.js-open {
+        z-index: 100;
+        top: $header_h * 1px;
+        opacity: 1;
+
+        .admin-bar & {
+            top: ($header_h + 32) * 1px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            .js-scrolling & {
+                top: 100px;
+            }
+
+
+            .js-scrolling.admin-bar & {
+                top: (100 + 32) * 1px;
+            }
+        }
+    }
+
+    &-container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        grid-gap: 5rem;
+
+        .nav_list {
+            display: flex;
+            grid-gap: 5rem;
+        }
+    }
+
+    &-nav {
+        // display: flex;
+
+        .title {
+            margin-bottom: 24px;
+        }
+    }
+
+    &-item {
+        max-width: 120px;
+        &:not(:first-of-type) {
+
+            margin-top: 1rem;
+        }
+    }
+}
+
+.nav_card {
+    ul {
+        display: flex;
+        grid-gap: 1rem;
+    }
+}
+
+.nav_card-item {
+    flex: 0 0 200px;
+    &-hd {
+        .pic {
+            overflow: hidden;
+        }
+        .img_div {
+            transform-origin: center;
+            transition: $transition-base;
+            @include rwdBlock(200, 166);
+        }
+    }
+    &-bd {
+        padding: 1rem 0;
+        .title {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    .inner {
+        display: block;
+        padding: 3px;
+        border-radius: 5px;
+        background-color: $transition-base;
+        &:hover {
+            background-color: color('yello');
+            .txt {
+                color: color('Main-brown');
+            }
+
+            .img_div {
+                transform: scale(1.05);
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+html {
+    font-size: $base-font-size;
+}
+
+body {
+    // padding-top: $header_h * 1px;
+    font-family: $akaiFont;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    background-color: #000;
+
+    color: #fff;
+    // @include txt-size("Body");
+    line-height: 1.8;
+    letter-spacing: 1.5px;
+    opacity: 0;
+    transition: $transition-base;
+
+    @include media-down($breakpoint-desktop-mobile) {
+        // padding-top: $header_h-breakpoint-desktop-mobile * 1px;
+
+    }
+
+    &.js-loading-ok {
+        opacity: 1;
+    }
+
+    &.js-open-mobile-menu {
+        // backdrop-filter: blur(20px);
+    }
+}
+
+
+.body_wrap {
+    position: relative;
+}
+.page_wrap {
+
+}
+

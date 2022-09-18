@@ -1,0 +1,151 @@
+%ctrlArrow {
+
+	position: relative;
+	top: unset;
+	right: unset;
+	bottom: unset;
+	left: unset;
+	margin-top: 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@include wh(40);
+	border-radius: 8px;
+	// background-color: #fff;
+	color: color("primary");
+
+	// box-shadow: 1px 1px 5px rgba(#72705B, 0.3);
+	transition: $transition-base;
+
+    .svgicon {
+        width: 12px;
+        height: 24px;
+    }
+	&:after {
+        display: none;
+	}
+
+	&:hover {
+		z-index: 2;
+		box-shadow: 1px 1px 5px rgba(#72705B, 0.8);
+	}
+}
+.banner-swiper {
+	position: relative;
+	overflow: hidden;
+	&-ctrl {
+		@include absolute(50%, 1rem);
+		transform: translateY(-50%);
+		z-index: 50;
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+	}
+	&-next {
+		@extend %ctrlArrow;
+
+	}
+	&-prev {
+		@extend %ctrlArrow;
+		.svgicon {
+			transform: scaleX(-1);
+		}
+	}
+
+	.swiper-pagination {
+		position: relative;
+		bottom: unset;
+		left: unset;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 24px;
+		width: auto;
+
+		&-bullet {
+			@include wh(8);
+			transform: rotate(45deg);
+			border-radius: 0;
+
+			background-color: #fff;
+			opacity: 0.5;
+
+			&.swiper-pagination-bullet-active {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+%bannerRwdBlock {
+	@include rwdBlock(1440, 696);
+
+	@include media-down(sm) {
+		padding-bottom: 110%;
+	}
+}
+
+.banner-slide {
+	&-inner {
+		position: relative;
+		overflow: hidden;
+
+		@extend %bannerRwdBlock;
+	}
+
+    &-txt {
+		@include absolute(50%, $L:50%);
+        transform: translate(-50%, -50%);
+		z-index: 40;
+
+		max-width: 80%;
+		// padding: 42px 1rem;
+		// background-color: rgba(color('grey6'), 0.85);
+		// border-radius: $border-radius-base;
+        color: #fff;
+        text-align: center;
+
+		@include media-down(md) {
+			// transform: translate(-50%, -50%);
+		}
+
+		.slogan {
+			position: relative;
+			text-transform: capitalize;
+		}
+
+		.subSlogan {
+            // @extend .txt-H2;
+            // font-weight: lighter;
+		}
+
+		.more {
+		}
+	}
+
+
+    &-btns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+	&-img {
+		@include absolute(0, 0);
+		z-index: 20;
+        width: 100%;
+		// width: percentage(908 / 1440);
+
+		.img_div {
+			position: relative;
+			z-index: 2;
+			@extend %bannerRwdBlock;
+
+		}
+
+	}
+}
+
+

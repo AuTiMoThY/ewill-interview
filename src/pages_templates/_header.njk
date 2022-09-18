@@ -1,0 +1,56 @@
+<header class="site_header">
+    <div class="site_header-container container">
+        <a href="./" class="site_logo">
+            <div class="img_elm">
+                <img src="{{IMG_PATH}}/akai-logo-white.svg" alt="AKAI 阿凱影音製作">
+            </div>
+        </a>
+        <nav class="site_nav">
+
+            <ul class="cf lis-n">
+                {% set nav = [
+                    {
+                        name: "service",
+                        txt: "服務項目"
+                    }
+                    , {
+                        name: "aboutus",
+                        txt: "關於我們"
+                    }
+                    , {
+                        name: "process",
+                        txt: "服務流程"
+                    }
+                    , {
+                        name: "showreel",
+                        txt: "作品觀賞"
+                    }
+                    , {
+                        name: "contact",
+                        txt: "聯絡我們"
+                    }
+                ] %}
+                {% for v in nav %}
+                <li class="site_nav-item" data-highlight="{{v.name}}">
+                    <a href="#{{v.name}}" class="site_nav-item-link">{{v.txt}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <div class="social">
+                <a href="javascript:;" class="social-link" target="_blank">
+                    <img src="{{IMG_PATH}}/icon-facebook.png" alt="">
+                </a>
+            </div>
+        </nav>
+    </div>
+    <div class="m_menu" id="m_menu" onclick="{{PROJECT_NAME}}UI.mmenu().init();">
+        <div class="group">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+            <div class="line4"></div>
+        </div>
+    </div>
+</header>
+<!-- /.site_header -->

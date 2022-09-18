@@ -1,0 +1,30 @@
+.web_goTop {
+	@include fixed($B: -100%, $R: 1.5rem);
+	z-index: 900;
+
+	transition: $transition-base;
+
+
+	&-inner {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include circle(50);
+		background-color: rgba(#fff, 0.8);
+		border: 1px solid color("grey5");
+		color: color("grey5");
+
+		transition: $transition-base;
+
+		&:hover {
+			background-color: color("grey5");
+			color: lighten(color("grey5"), 50);
+		}
+	}
+
+	&.js-show {
+		bottom: 3rem;
+	}
+
+
+}

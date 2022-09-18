@@ -1,0 +1,15 @@
+// $ff = font-family
+// $name
+@mixin txtSetting($ff, $name) {
+    font-family: $ff;
+	@include remCalc(font-size, map-get(map-get($txt-setting, $name), "fz"));
+	line-height: map-get(map-get($txt-setting, $name), "lh") * 1px;
+	@if is-relative-length(map-get(map-get($txt-setting, $name), "ls")) {
+		letter-spacing: map-get(map-get($txt-setting, $name), "ls");
+	}
+	@else {
+		letter-spacing: map-get(map-get($txt-setting, $name), "ls") * 1px;
+	}
+
+    font-weight: map-get(map-get($txt-setting, $name), "fw");
+}

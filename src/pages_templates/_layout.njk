@@ -1,0 +1,75 @@
+{% set youtubeID = "n43qH6y5S_g" %}
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content="#231815">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#231815">
+  {# <link rel="shortcut icon" href="favicon.png"> #}
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <title>鎰威科技前端面試</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="robots" content="index,follow">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <!-- 讓手機不判斷它是電話號碼變顏色-->
+  <meta name="format-detection" content="telephone=no">
+
+
+  {% block page_head %} {% endblock %}
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  {# <link rel="stylesheet" href="public/plugins/simplebar/simplebar.css"> #}
+  <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"/>
+  <link rel="stylesheet" href="public/css/style.css?v={{ VERSION }}">
+
+</head>
+
+<body>
+  <div class="web_top" id="top"></div>
+  <div class="web_goTop" id="goTop"><a class="web_goTop-inner" href="#top"><i class="fas fa-chevron-up"></i></a></div>
+  <!-- ========================================================================= -->
+  <!-- .body_wrap  START-->
+  <div class="body_wrap">
+    <!-- header START -->
+    {# {% include "_header.njk" %} #}
+    <!-- /header END  !! -->
+    {% block content %} {% endblock %}
+    <!-- footer START -->
+    {# {% include "_footer.njk" %} #}
+    <!-- /footer END  !! -->
+  </div>
+  <!-- /.body_wrap  START-->
+  <!-- =========================================================================-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="public/js/libs/jquery.min.js"><\/script>')</script>
+  <script src="public/js/libs/plugin_mix.js"></script>
+
+  {# <script src="public/plugins/snap.svg-min.js"></script> #}
+  <script type="text/javascript" src="https://unpkg.com/external-svg-loader@1.3.1/svg-loader.min.js" async></script>
+
+  <!-- gsap -->
+  <script src="public/plugins/gsap/gsap.min.js"></script>
+  <script src="public/plugins/gsap/CSSRulePlugin.min.js"></script>
+  <script src="public/plugins/gsap/ScrollTrigger.min.js"></script>
+  <script src="public/plugins/gsap/ScrollToPlugin.min.js"></script>
+
+  {# <!-- swiper --> #}
+  {# <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> #}
+
+  {# <!-- simplebar --> #}
+  {# <script src="public/plugins/simplebar/simplebar.js"></script> #}
+
+  {# <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script> #}
+  <!-- script -->
+  <script src="public/js/script.js?v={{ VERSION }}"></script>
+  {% block page_script %} {% endblock %}
+</body>
+
+</html>

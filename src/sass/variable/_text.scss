@@ -1,0 +1,56 @@
+// > text
+$txt-size: (
+    "H1": 54,
+    "H2": 36,
+    "H3": 24,
+    "H4": 18,
+    "Body": 16,
+    "Small": 12,
+    "Btn": 16
+);
+
+
+$txt-setting: (
+    'H1': (
+        'fw': 900,
+        'fz': map-get($txt-size, 'H1'),
+        'lh': 81,
+        'ls': 1
+    ),
+    'H2': (
+        'fw': 700,
+        'fz': map-get($txt-size, 'H2'),
+        'lh': 54,
+        'ls': 1
+    ),
+    'H3': (
+        'fw': 700,
+        'fz': map-get($txt-size, 'H3'),
+        'lh': 36,
+        'ls': 1
+    ),
+    'H4': (
+        'fw': 500,
+        'fz': map-get($txt-size, 'H4'),
+        'lh': map-get($txt-size, 'H3') * 1.5,
+        'ls': 1
+    ),
+    'Body': (
+        'fw': 400,
+        'fz': map-get($txt-size, 'Body'),
+        'lh': 24,
+        'ls': 1
+    ),
+    'Small': (
+        'fw': 400,
+        'fz': map-get($txt-size, 'Small'),
+        'lh': 18,
+        'ls': 1
+    ),
+    'Btn': (
+        'fw': 500,
+        'fz': map-get($txt-size, 'Btn'),
+        'lh': 24,
+        'ls': 1
+    )
+);

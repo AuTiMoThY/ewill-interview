@@ -1,0 +1,77 @@
+.#{$PROJECT_NAME}_select {
+    position: relative;
+    z-index: 11;
+    width: 100%;
+    cursor: pointer;
+    .svgicon {
+        @include absolute(50%, 0.5rem);
+        @include wh(10, 6);
+        transform: translateY(-50%);
+    }
+    &-select {
+        width: 100%;
+        border: none;
+        background-color: transparent;
+        padding: 0 0.3rem;
+
+        &.js-hidden {
+            display: none;
+        }
+    }
+
+    &-styled {
+        padding: 0 1rem;
+    }
+
+
+    &-list {
+        @include absolute(-1, $L:-1);
+        z-index: 10;
+        width: calc(100% + 2px);
+        padding-top: 40px;
+        border: 1px solid transparent;
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+
+        // padding-top: 0;
+        transition: $transition-base;
+        opacity: 0;
+        
+        ul {
+            max-height: 0;
+            // height: 100%;
+            border-top: 1px solid color("grey3");
+            overflow-y: scroll;
+            transition: $transition-base;
+        }
+
+        .js-open + & {
+            border: 1px solid color("grey3");
+            box-shadow: $boxShadow-weak;
+            
+            // padding-top: 40px;
+            opacity: 1;
+            ul {
+                max-height: 230px;
+            }
+        }
+    }
+
+    &-item {
+        padding: 1rem;
+        cursor: pointer;
+        transition: $transition-base;
+
+        &:not(:first-of-type) {
+            border-top: 1px solid color("grey4");
+        }
+
+        &:hover {
+            background-color: color("grey4");
+        }
+    }
+
+
+
+}

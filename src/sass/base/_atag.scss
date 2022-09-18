@@ -1,0 +1,9 @@
+a {
+	color: #fff;
+	transition: all 0.3s ease-in-out;
+	&:hover {
+		text-decoration: none;
+        color: color("Main");
+	}
+
+}

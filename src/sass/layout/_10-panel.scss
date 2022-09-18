@@ -1,0 +1,46 @@
+.#{$PROJECT_NAME}_panel {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: map-get($boxShadow, hover);
+	margin-bottom: 1.5rem;
+	// background-color: color("grey4");
+	
+	&-hd {
+		padding: 0.5rem 1rem;
+
+		display: flex;
+		justify-content: space-between;
+
+		border-bottom: 1px solid color("grey4");
+
+		.icon {
+			@include wh(6, 8)
+		}
+	}
+
+	&-bd {
+		padding: 1.5rem;
+	}
+
+	&-ft {}
+
+	&-title {
+		position: relative;
+		@extend .txt-grey1;
+		@extend .txt-h4;
+
+		margin-bottom: 0;
+		display: flex;
+		align-items:center;
+
+		&:before {
+			@include psudoClass();
+			@include wh(8);
+			background-color: color("2nd2");
+			margin-right: 0.5rem;
+			border-radius: 1px;
+			transform: rotate(-45deg);
+		}
+	}
+
+}

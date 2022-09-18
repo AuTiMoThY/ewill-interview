@@ -1,0 +1,15 @@
+@mixin rwdFontSize($fz) {
+    font-size: $fz;
+    @if $fz != 20px {
+        @include media-down($breakpoint-desktop-mobile) {
+            font-size: $fz * 0.8;
+        }
+        @include media-down(md) {
+            font-size: $fz * 0.7;
+        }
+        @include media-down(sm) {
+            font-size: $fz * 0.6;
+        }
+    }
+
+}

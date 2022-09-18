@@ -1,0 +1,105 @@
+{% macro pdtListCard(PROJECT_NAME, IMG_PATH, img_src, name, price, link) %}
+<module-card class="{{ PROJECT_NAME }}_card pdt_card1" data-star="0">
+    <a href="{{link}}" class="{{ PROJECT_NAME }}_card-inner">
+        <div class="{{ PROJECT_NAME }}_card-hd">
+            <div class="img_div">
+                <img src="{{ img_src }}" alt="">
+            </div>
+            <div class="more">READ MORE</div>
+        </div>
+        <div class="{{ PROJECT_NAME }}_card-bd">
+            <div class="inner">
+                <div class="{{ PROJECT_NAME }}_card-bd-main">
+                    <div class="name txt-H4 txt-grey2">{{name}}</div>
+                    <div class="star" data-star="5">
+                        <div class="icon star-1"> <svg class="svgicon" data-src="{{IMG_PATH}}/icons/icon-star.svg"></svg> </div>
+                        <div class="icon star-2"> <svg class="svgicon" data-src="{{IMG_PATH}}/icons/icon-star.svg"></svg> </div>
+                        <div class="icon star-3"> <svg class="svgicon" data-src="{{IMG_PATH}}/icons/icon-star.svg"></svg> </div>
+                        <div class="icon star-4"> <svg class="svgicon" data-src="{{IMG_PATH}}/icons/icon-star.svg"></svg> </div>
+                        <div class="icon star-5"> <svg class="svgicon" data-src="{{IMG_PATH}}/icons/icon-star.svg"></svg> </div>
+                    </div>
+                    <div class="price">${{price}}</div>
+                </div>
+            </div>
+        </div>
+    </a>
+</module-card>
+{% endmacro %}
+
+{% macro pdtCardStar(PROJECT_NAME, IMG_PATH) %}
+<module-card class="{{PROJECT_NAME}}_card pdtCardStar">
+    <figure class="{{PROJECT_NAME}}_card-inner">
+        <div class="{{PROJECT_NAME}}_card-hd">
+            <a href="" class="inner">
+                <div class="img_div">
+                    <img src="{{IMG_PATH}}/home/img-06.jpg" alt="">
+                </div>
+                <div class="float_btn">
+                    <span class="icon" data-drawicon="{{IMG_PATH}}/icons/i-add_to_bag.svg"></span>
+                    <span class="txt txt-BTN">ADD TO BAG</span>
+                </div>
+            </a>
+        </div>
+        <figcaption class="{{PROJECT_NAME}}_card-bd">
+            <div class="name">
+                Exfoliating Liquid Shampoo scalp deep cleanser
+            </div>
+            <div class="star" data-star="5">
+                <div class="icon star-1">
+                    <svg class="svgicon" data-src="{{IMG_PATH}}/icons/icon-star.svg"></svg>
+                </div>
+                <div class="icon star-2">
+                    <svg class="svgicon" data-src="{{IMG_PATH}}/icons/icon-star.svg"></svg>
+                </div>
+                <div class="icon star-3">
+                    <svg class="svgicon" data-src="{{IMG_PATH}}/icons/icon-star.svg"></svg>
+                </div>
+                <div class="icon star-4">
+                    <svg class="svgicon" data-src="{{IMG_PATH}}/icons/icon-star.svg"></svg>
+                </div>
+                <div class="icon star-5">
+                    <svg class="svgicon" data-src="{{IMG_PATH}}/icons/icon-star.svg"></svg>
+                </div>
+                <div class="star-num">(213)</div>
+            </div>
+            <div class="price mb-3">
+                ＄60
+            </div>
+        </figcaption>
+    </figure>
+</module-card>
+{% endmacro %}
+
+
+{% macro pdtHomeCard(PROJECT_NAME, IMG_PATH) %}
+<module-card class="{{PROJECT_NAME}}_card pdt-home-card">
+    <figure class="{{PROJECT_NAME}}_card-inner">
+        <div class="{{PROJECT_NAME}}_card-hd">
+            <a href="" class="inner">
+                <div class="img_div">
+                    <img src="{{IMG_PATH}}/home/img-06.jpg" alt="">
+                </div>
+                <div class="float_btn">
+                    <span class="icon" data-drawicon="{{IMG_PATH}}/icons/i-add_to_bag.svg"></span>
+                    <span class="txt">ADD TO BAG</span>
+                </div>
+            </a>
+        </div>
+        <figcaption class="{{PROJECT_NAME}}_card-bd">
+            <div class="scalp_type">
+                <span class="type_item">oily</span>
+                <span class="type_item">neutral</span>
+                <span class="type_item">dry</span>
+            </div>
+            <div class="name">
+                Exfoliating Liquid Shampoo scalp deep cleanser
+            </div>
+            <div class="price mb-3">
+                ＄60
+            </div>
+            <a href="pdt_detail.html" class="{{ PROJECT_NAME }}_btn txt-BTN txt-grey2 more">MORE TO KNOW</a>
+        </figcaption>
+    </figure>
+</module-card>
+
+{% endmacro %}

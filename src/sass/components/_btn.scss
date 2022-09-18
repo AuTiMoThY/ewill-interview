@@ -1,0 +1,85 @@
+.#{$PROJECT_NAME}_btn {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    // width: 276px;
+    // height: 34px;
+    border-radius: 8px;
+    border: 1px solid color("Main-Blue");
+    background-color: rgba(color('Main-Blue'), 1);
+
+    padding: 1rem - (1 * 0.25) 1.8rem - (1 * 0.25);
+
+    box-shadow: 0 0 0 rgba(#000, 0);
+    transition: background-color 0.3s ease-in-out,
+        box-shadow 0.3s ease-in-out,
+        color 0.3s ease-in-out,
+        border 0.3s ease-in-out,
+        text-shadow 0.3s ease-in-out;
+
+    color: #fff;
+    // @include txt-("BTN");
+
+    cursor: pointer;
+
+    // &-s {
+    //     height: 30px;
+    //     padding: 0.3rem 0.6rem;
+    // }
+
+
+    &:hover, .js-hover & {
+        border: 1px solid rgba(#000, 0);
+        // background-color: color("Main-Blue");
+        color: #fff;
+        text-shadow: 0 0 4px rgba(#fff, 0.8);
+        text-decoration: none;
+        box-shadow: 0px 8px 20px rgba(20, 162, 209, 0.5);
+    }
+
+
+    .#{$PROJECT_NAME}_card & {
+        background-color: rgba(color("Main-Blue"), 0);
+        color: color("Main-Blue");
+
+        &:hover {
+            background-color: rgba(color("Main-Blue"), 1);
+            color: #fff;
+        }
+    }
+
+    .#{$PROJECT_NAME}_card.js-hover & {
+        background-color: rgba(color("Main-Blue"), 1);
+        color: #fff;
+    }
+
+
+    .icon {
+        @include wh(16);
+        path {
+            fill: currentColor;
+        }
+        +.txt {
+            margin-left: 0.5rem;
+        }
+    }
+
+    .txt {
+        // @include txt-('Btn');
+        +.icon {}
+
+        &.txt {
+            margin-bottom: 0; // Elevate permissions
+        }
+    }
+
+
+
+    &:active {
+        transform: translate(1px, 1px);
+        box-shadow: $boxShadowActive1;
+    }
+
+}
+

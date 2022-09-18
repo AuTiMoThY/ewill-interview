@@ -1,0 +1,100 @@
+.#{$PROJECT_NAME}_field {
+    @extend .input-group;
+
+    padding: 0.5rem;
+    background-color: #fff;
+
+    display: flex;
+    align-items: center;
+
+    &-prepend {
+        @extend .input-group-prepend;
+    }
+    &-append {
+        @extend .input-group-append;
+
+    }
+
+    &-input {
+        border: none;
+        background-color: transparent;
+        padding: 0 0.3rem;
+
+        .#{$PROJECT_NAME}_field & {
+            border-radius: 5px !important;
+        }
+    }
+
+    .js-error {
+    }
+    
+    + .error-txt {
+        margin-top: 0.5em;
+    }
+}
+
+%commonZindex {
+    position: relative;
+    z-index: 2;
+}
+.#{$PROJECT_NAME}_field {
+    position: relative;
+
+    border-radius: 4px;
+    border: 1px solid color("yello");
+
+    &-prepend {
+        @extend %commonZindex;
+    }
+    &-append {
+        @extend %commonZindex;
+        // display: flex;
+    }
+    &-input {
+        @extend %commonZindex;
+
+        height: calc(40px - 1rem);
+    }
+
+    &.js-error {
+        border-color: color("error");
+    }
+    &.js-focus {
+        // border-color: color("primary");
+
+        &:before {
+            @include psudoClass;
+            @include wh;
+            @include absolute(0, $L:0);
+            z-index: 1;
+            border: 1px solid color("yello");
+            border-radius: 4px;
+            opacity: 1;
+            animation-name: enlarge;
+            animation-duration: 1.5s;
+            animation-fill-mode: both;
+            animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+        }
+    }
+    &:before {
+
+
+    }
+    
+    + .error-txt {
+        margin-top: 0.5em;
+    }
+}
+
+.update_file {
+    width: 100%;
+    .#{$PROJECT_NAME}_field-input {
+        opacity: 0;
+    }
+
+    .placeholder {
+        display: flex;
+        align-items: center;
+        color: #DBDBDB;
+    }
+}

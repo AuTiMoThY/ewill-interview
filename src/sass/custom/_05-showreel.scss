@@ -1,0 +1,96 @@
+
+.showreel--wrapper {}
+
+.showreel--hd {
+    display: flex;
+    justify-content: flex-end;
+}
+.showreel--bd {
+    padding-top: 104px;
+}
+
+
+.showreel-title {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 80%;
+
+    .big {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        gap: 2rem;
+        padding-bottom: 0.5rem;
+        // flex-direction: column;
+        @extend %section-title;
+
+        &::before {
+            @include psudoClass;
+            @include absolute($B:0);
+            @include wh(100%, 1);
+            background-color: color("Main");
+        }
+
+        &::after {
+            @include psudoClass;
+            @include absolute($B:-8px, $L:-8px);
+            @include circle(16);
+            background-color: color("Main");
+        }
+    }
+
+    .txt {
+        @extend %section-subtitle;
+
+        text-align: right;
+    }
+}
+
+.showreel-swiper {
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    .swiper-button-prev {
+        &::after {
+            content: '';
+            @include triangle('left', color("Main"), 16px);
+        }
+    }
+
+    .swiper-button-next {
+        &::after {
+            content: '';
+            @include triangle('right', color("Main"), 16px);
+        }
+    }
+}
+
+.showreel-list {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.showreel-item {
+    .img_elm {
+        @include rwdBlock(16, 9);
+    }
+    img {
+        object-fit: cover;
+        max-width: none;
+        transition: $transition-base;
+    }
+
+    &-link {
+        display: block;
+        box-shadow: 10px 10px 10px rgba(color("Main"), 0.1);
+
+        &:hover {
+            box-shadow: 10px 30px 30px rgba(color("Main"), 0.1);
+
+            img {
+                transform: scale(1.05);
+            }
+        }
+    }
+}

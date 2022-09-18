@@ -1,0 +1,16 @@
+
+.lis-n {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.list_style {
+    &-dot {
+        list-style: circle;
+    }
+
+    &-num {
+        list-style: decimal;
+    }
+}

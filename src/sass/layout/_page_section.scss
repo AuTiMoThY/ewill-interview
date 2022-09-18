@@ -1,0 +1,63 @@
+.page_section {
+    position: relative;
+    overflow: hidden;
+
+    &:not(.banner) {
+        // padding-top: 104px;
+        padding-bottom: 208px;
+
+        @include media-down($breakpoint-desktop-mobile) {
+            padding-top: 3rem;
+            padding-bottom: 104px;
+        }
+
+        @include media-down(md) {
+            padding-bottom: 52px;
+        }
+    }
+
+    @at-root {
+        .page_heading + & {
+            padding-top: 40px;
+        }
+    }
+
+    &.has-aside {
+        .page_main-aside {
+
+        }
+        .page_main-content {
+
+        }
+    }
+}
+
+
+.page_section {
+    &.banner {
+        z-index: 100;
+        width: 100%;
+        height: 100vh;
+
+        @include media-down($breakpoint-desktop-mobile) {
+            // height: auto;
+        }
+        @include media-down(md) {
+            // height: 80vh;
+        }
+        @include media-down(sm) {
+            // height: 70vh;
+            height: 80vh;
+        }
+        @include media-down(xs) {
+        }
+    }
+
+    &.service {
+        padding-top: 90px;
+
+        @include media-down(md) {
+            padding-top: 60px;
+        }
+    }
+}

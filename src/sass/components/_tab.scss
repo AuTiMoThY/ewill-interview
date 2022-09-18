@@ -1,0 +1,95 @@
+.#{$PROJECT_NAME}_tab {
+    &-ctrl {
+		&-selector {
+			cursor: pointer;
+
+            transition: $transition-base;
+		}
+	}
+
+	&-content {
+		position: relative;
+
+		// transition: $transition-base;
+
+		&-inner {
+			display: none;
+			// opacity: 0;
+
+			&.js-show {
+				display: block;
+				// opacity: 1;
+				// transition: opacity 0.8s ease-in-out;
+				animation-name: zoomIn;
+				// backface-visibility: visible !important;
+				animation-duration: 0.3s;
+				animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+				animation-fill-mode: both;
+			}
+		}
+	}
+}
+
+
+
+.#{$PROJECT_NAME}_tab {
+	&-ctrl {
+        margin-bottom: 40px;
+		ul {
+			display: flex;
+			align-items: center;
+			// justify-content: center;
+			justify-content: space-between;
+		}
+		&-selector {
+            display: flex;
+            align-items: center;
+			// height: 40px;
+			// border-radius: 40px;
+            // padding: 0 1rem;
+            // margin-left: 12px;
+            // margin-right: 12px;
+			// background-color: color("2nd3");
+
+            // color: #fff;
+			@include txt-('P1');
+			color: color('grey5');
+
+            &:hover, &.js-active {
+                // background-color: color("primary");
+				color: color('Sub-brown');
+            }
+
+
+			&.js-active:hover {
+				// box-shadow: $boxShadow-weak;
+			}
+		}
+	}
+
+	&-content {
+
+		&-inner {
+
+			&.js-show {
+
+			}
+		}
+	}
+}
+
+
+.style1 {
+	.#{$PROJECT_NAME}_tab {
+		&-ctrl-selector {
+			@extend .#{$PROJECT_NAME}_btn-nobg;
+			@extend .#{$PROJECT_NAME}_btn-border;
+
+			border-radius: 0;
+
+			&.js-active {
+				color: #fff;
+			}
+		}
+	}
+}

@@ -1,0 +1,34 @@
+{# 
+表單元件 - label, input, rcx, Textarea
+Version 0.2
+Update 20211104
+Author AuOzzy
+ #}
+
+
+
+{% macro label(PROJECT_NAME, name, text) %}
+<label for="{{ name }}" class="txt {{PROJECT_NAME}}_frm-label">{{ text }}</label>
+{% endmacro %}
+
+{% macro input(PROJECT_NAME, name, placeholder='', type='text') %}
+<input type="{{ type }}" id="{{ name }}" class="{{ PROJECT_NAME }}_field-input form-control" placeholder="{{ placeholder }}">
+{% endmacro %}
+
+
+{% macro rcx(PROJECT_NAME, name, nameArr, text, type='radio') %}
+    <div class="{{ PROJECT_NAME }}_rcx">
+        <label for="{{ name }}" class="{{ PROJECT_NAME }}_rcx-label">
+            <input type="{{ type }}" id="{{ name }}" name="{{ nameArr }}" class="{{ PROJECT_NAME }}_rcx-input" value="{{ text }}">
+            <span class="{{ PROJECT_NAME }}_rcx-label-inner">
+                <span class="choicemark"></span>
+                <span class="txt">{{ text }}</span>
+            </span>
+        </label>
+    </div>
+{% endmacro %}
+
+
+{% macro textarea(PROJECT_NAME, name, placeholder='') %}
+<textarea name="" id="{{ name }}" class="{{ PROJECT_NAME }}_frm-textarea form-control" placeholder="{{ placeholder }}"></textarea>
+{% endmacro %}

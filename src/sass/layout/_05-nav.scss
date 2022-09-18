@@ -1,0 +1,265 @@
+$nav_item_default_color: color("grey1");
+$nav_item_hover_color: color("primary");
+
+@mixin openMobileMenu {
+	.js-open-mobile-menu & {
+		@content;
+	}
+};
+.web_nav {
+	height: 100%;
+
+	.js-open-mobile-menu & {
+		background-color: #fff;
+	}
+
+	@include media-down($breakpoint-desktop-mobile) {
+		height: auto;
+		// overflow-y: auto;
+	}
+	> ul {
+		display: flex;
+		height: 100%;
+
+		@include media-down($breakpoint-desktop-mobile) {
+			display: block;
+			height: auto;
+			padding-bottom: 1rem;
+		}
+	}
+
+	&-item {
+		position: relative;
+		height: 100%;
+		// padding: 0 0.5rem;
+
+		background-color: transparent;
+		color: $nav_item_default_color;
+
+		transition: $transition-base;
+
+		@include media-down($breakpoint-desktop-mobile) {
+			height: auto;
+		}
+
+		&-link {
+			position: relative;
+			display: flex;
+			align-items: center;
+			height: 100%;
+			padding: 0 1.5rem;
+
+			word-break: keep-all;
+			white-space: nowrap;
+			color: currentColor;
+
+			@include media-down(xl) {
+				padding: 0 0.8rem;
+			}
+			@include media-down(1120) {
+				padding: 0 1rem;
+			}
+			@include media-down($breakpoint-desktop-mobile) {
+				padding: 1rem 2rem;
+			}
+
+			.arr-icon {
+				width: 12px;
+				height: 7px;
+				margin-left: 0.3rem;
+				transition: $transition-base;
+
+				path {
+					fill: none;
+					stroke: color("primary");
+				}
+			}
+
+
+			@include openMobileMenu {
+				border-bottom: 1px solid color("grey4");
+
+			}
+		}
+
+		&.current-menu-item,
+		&.current-menu-parent {
+			@extend %nav-hightlight;
+		}
+
+		&:hover {
+			@extend %nav-hightlight;
+
+			@include openMobileMenu {
+				@extend %nav-hightlight-open-mobile-menu;
+			}
+
+			.web_nav-item-link {
+				text-decoration: none;
+			}
+
+			// @media screen and (min-width: $breakpoint-desktop-mobile) {
+			// color: #fff;
+			.sub_web_nav {
+				max-height: 800px;
+				opacity: 1;
+			}
+			.arr-icon {
+				transform: scaleY(-1);
+			}
+			// }
+		}
+
+		&.js-active {
+			@extend %nav-hightlight;
+
+			@include openMobileMenu {
+
+				@extend %nav-hightlight-open-mobile-menu;
+				.web_nav-item-link {
+					color: #fff;
+				}
+			}
+
+			.sub_web_nav {
+				@include media-down($breakpoint-desktop-mobile) {
+					max-height: 800px;
+					opacity: 1;
+				}
+			}
+		}
+
+	}
+}
+%nav-hightlight {
+	color: $nav_item_hover_color;
+	.web_nav-item-link {
+		text-decoration: none;
+	}
+}
+
+%nav-hightlight-open-mobile-menu {
+	background-color: color("2nd1");
+	color: #fff;
+}
+
+.sub_web_nav {
+	@include absolute(100%, $L: 50%);
+	transform: translateX(-50%);
+	z-index: 30;
+	min-width: 100%;
+	// height: 0;
+	max-height: 0;
+	overflow: hidden;
+	box-shadow: map-get($boxShadow, "default");
+	
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	opacity: 0;
+
+	transition: max-height 0.3s $easeInOutCubic;
+
+	@include openMobileMenu {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+
+	@include media-down($breakpoint-desktop-mobile) {
+		position: relative;
+		top: unset;
+		left: unset;
+		transform: translateX(0%);
+	}
+
+	> ul {
+		min-width: 100%;
+		background-color: #fff;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
+	&-item {
+		color: color("grey1");
+
+		&:not(:first-of-type) {
+			border-top: 1px solid color("grey4");
+		}
+		.link {
+			display: block;
+			padding: 1rem;
+			// background-color: rgba(color("2nd1"), 0);
+			color: currentColor;
+			text-align: center;
+
+			word-break: keep-all;
+			white-space: nowrap;
+
+			@include media-down(md) {
+				text-align: left;
+			}
+			@include openMobileMenu {
+				padding-left: 3.5rem;
+				text-align-last: left;
+			}
+		}
+
+		&:hover {
+			color: color("primary");
+			// @extend %nav-hightlight;
+			.link {
+				// background-color: rgba(color("2nd1"), 1);
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+.small_menu {
+	ul {
+		display: flex;
+
+		@include openMobileMenu {
+			flex-direction: column;
+		}
+	}
+
+	&-item {
+		&:not(:first-of-type) {
+			margin-left: 24px;
+		}
+		@include openMobileMenu {
+			padding: 0.5rem 0;
+			@include oftype(1) {
+				margin-left: 24px;
+			}
+		}
+		.link {
+			position: relative;
+			display: flex;
+			align-items: center;
+
+			color: color("2nd3");
+
+			@include hover_line(2, color("2nd3"));
+
+			&:before {
+				@include psudoClass();
+				@include wh(4);
+				background-color: currentColor;
+				margin-right: 0.5rem;
+				transform: rotate(-45deg);
+				transition: $transition-base;
+			}
+
+			&:hover {
+				color: color("2nd2");
+			}
+		}
+
+		&.js-highlight {
+			.link {
+				color: color("2nd2");
+			}
+		}
+	}
+}

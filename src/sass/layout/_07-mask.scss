@@ -1,0 +1,6 @@
+.m_mask {
+    @include fixed(0, $L:0);
+    z-index: 89;
+    @include wh(100vw, 100vh);
+    background-color: #000;
+}

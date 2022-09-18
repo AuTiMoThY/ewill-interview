@@ -1,0 +1,24 @@
+// .link {
+// 	@extend .txt-P1-link;
+// 	color: color('Main-brown');
+
+// 	&:not(.no-line) {
+// 		@include hover_line(2, color('yello-dark'));
+// 	}
+// 	&:hover {
+// 	}
+// }
+
+
+
+// @each $name,
+// $color in $colors {
+// 	.link-#{$name} {
+// 		color: $color;
+// 		text-decoration: underline;
+
+// 		&:hover {
+// 			text-decoration: underline;
+// 		}
+// 	}
+// }

@@ -1,0 +1,23 @@
+
+.site_logo {
+	// position: relative;
+	display: flex;
+	justify-content: center;
+	width: 130px;
+
+	transition: $transition-base;
+
+	.img_elm {
+		@include rwdBlock(1, 1);
+	}
+	.js-scrolling & {
+		width: 80px;
+	}
+
+	@include media-down($breakpoint-desktop-mobile) {
+		width: 100px;
+	}
+
+
+
+}

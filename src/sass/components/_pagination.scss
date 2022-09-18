@@ -1,0 +1,126 @@
+$pag-default-color: color("grey1");
+$pag-active-color: #fff;
+
+$pag-default-bgc: color("primary");
+
+/*
+<nav class="navigation pagination" role="navigation" aria-label="文章">
+    <h2 class="screen-reader-text">文章導覽</h2>
+    <div class="nav-links">
+        <a class="prev page-numbers" href="http://lizzcosme.designhu-demo.com/news/page/1/">
+            <div class="svgicon">
+                <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 1L1 5L5 9"></path>
+                </svg>
+            </div>
+        </a>
+        <a class="page-numbers" href="http://lizzcosme.designhu-demo.com/news/page/1/">1</a>
+        <span aria-current="page" class="page-numbers current">2</span>
+        <a class="page-numbers" href="http://lizzcosme.designhu-demo.com/news/page/3/">3</a>
+        <a class="page-numbers" href="http://lizzcosme.designhu-demo.com/news/page/4/">4</a>
+        <a class="next page-numbers" href="http://lizzcosme.designhu-demo.com/news/page/3/">
+            <div class="svgicon">
+                <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5 5L1 9"></path>
+                </svg>
+            </div>
+        </a>
+    </div>
+</nav>
+*/
+.#{$PROJECT_NAME}_pagination {
+
+	padding: 50px 0 0;
+
+	.pagination {
+		padding-bottom: 50px;
+	}
+
+	.nav-links {
+		display: flex;
+		justify-content: center;
+	}
+
+	.screen-reader-text {
+		display: none;
+	}
+
+	.page-numbers {
+		&:not(:first-child) {
+			margin-left: 0.8rem;
+		}
+
+		@include media-down(xs) {
+			&:nth-of-type(2) {
+				margin-left: 0;
+			}
+		}
+	}
+
+}
+
+
+// 按鈕樣式
+.#{$PROJECT_NAME}_pagination {
+	display: flex;
+	justify-content: center;
+	.pagination {
+		position: relative;
+	}
+	.page-numbers {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include wh(40);
+		background-color: rgba($pag-default-bgc, 0);
+		// border: none;
+		border-radius: 10px;
+		border: 1px solid color("grey3");
+		color: $pag-default-color;
+
+		transition: $transition-base;
+
+		@include media-breakpoint-down(xs) {
+			@include wh(35);
+		}
+
+		&:hover {
+			background-color: rgba($pag-default-bgc, 1);
+			border: 1px solid $pag-default-bgc;
+			box-shadow: 0 0 5px rgba($pag-default-bgc, 1);
+			color: #fff;
+		}
+
+		&.current {
+			background-color: rgba($pag-default-bgc, 1);
+			// border: 1px solid $pag-default-color;
+			color: #fff;
+		}
+
+	}
+	.prev, .next {
+		.svgicon {
+			// fill: currentColor;
+			width: 6px;
+			path {
+				stroke: currentColor;
+				transition: $transition-base;
+			}
+		}
+
+		@include media-down(xs) {
+			@include absolute($B:0, $L:0);
+		}
+	}
+
+	.next {
+		@include media-down(xs) {
+			left: unset;
+			right: 0;
+		}
+		.svgicon {
+			transform: rotate(180deg);
+		}
+	}
+
+}

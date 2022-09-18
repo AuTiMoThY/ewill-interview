@@ -1,0 +1,32 @@
+.page_heading {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    background-image: url(../images/page_title-bg.jpg);
+    box-shadow: inset 0px -10px 30px rgba(color("Gray-04"), 0.1);
+
+    padding-top: 90px;
+    padding-bottom: 180px;
+
+    .title {
+        position: relative;
+        // padding-bottom: 1rem;
+        margin-bottom: 1rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        &::after {
+            @include psudoClass;
+            // @include absolute($B:0, $L:50%);
+            // transform: translateX(-50%);
+            transform: rotate(45deg);
+            @include wh(8);
+            background-color: color("Sub-Yellow");
+        }
+    }
+}

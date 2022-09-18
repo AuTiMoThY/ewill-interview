@@ -1,0 +1,146 @@
+
+.site_search {
+	
+	&-ctrl {
+		.close {}
+		.search {}
+	}
+
+	&-frm {}
+	&-field {}
+	&-input {}
+	&-btn {}
+}
+
+.site_search {
+
+	display: flex;
+	align-items: center;
+
+	transition: $transition-base;
+
+	&-ctrl {
+		position: relative;
+		// display: flex;
+		// align-items: center;
+		// justify-content: center;
+		// @include circle(30);
+
+		@include media-down($breakpoint-desktop-mobile) {
+			.js-open-mobile-menu & {
+				display: none;
+			}
+		}
+		.ctrl-btn {
+			@include wh(40);
+			&.close {
+				position: absolute;
+
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				opacity: 0;
+
+				.js-open-search & {
+
+					opacity: 1;
+				}
+
+				.svgicon {
+					@include wh(16);
+				}
+			}
+
+			&.site_search-btn {
+				.js-open-search & {
+					opacity: 0;
+				}
+
+			}
+		}
+	}
+	
+	&-frm {
+		display: flex;
+		align-items: center;
+
+		max-width: 0;
+		overflow: hidden;
+		transition: $transition-base;
+
+		@include media-breakpoint-up(lg) {
+			.js-open-search & {
+				max-width: 500px;
+			}	
+		}
+
+		@include media-down($breakpoint-desktop-mobile) {
+			.js-open-mobile-menu & {
+				max-width: none;
+
+				.site_search-btn {
+					order: 1;
+				}
+				.site_search-input {
+					order: 0;
+				}
+			}
+		}
+
+	}
+
+	&-field {
+		display: flex;
+		align-items: center;
+
+		padding-right: 0;
+		padding-left: 0;
+
+		border: none;
+		border-bottom: 1px solid rgba(#000, 0.1);
+		border-radius: 0;
+	}
+
+	&-input {
+		width: 200px;
+		// margin-right: 1rem;
+		background-color: transparent;
+		border: none;
+
+		.js-open-mobile-menu & {
+			width: auto;
+		}
+	}
+
+	&-btn {
+		@include wh(40);
+		border-radius: 5px;
+		border: none;
+		background-color: transparent;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+
+		transition: $transition-base;
+		path {
+			fill: color("primary");
+		}
+	}
+
+	.js-open-search & {
+		// padding: 0.8rem;
+		// max-height: 200px;
+		// // top: 100%;
+		// z-index: 1;
+		// opacity: 1;
+	}
+
+
+	.hide_field & {
+
+	}
+}
+
+

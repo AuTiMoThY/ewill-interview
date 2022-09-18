@@ -1,0 +1,19 @@
+.i-arrow {
+    path {
+        fill: color('grey5');
+        transition: $transition-base;
+    }
+
+    &:hover {
+        path {
+            fill: color('grey3');
+
+        }
+    }
+}
+
+.select-arrow {
+    .svgicon {
+        fill: none;
+    }
+}
