@@ -1,4 +1,4 @@
-const project = "ewill-interview";
+const project = "ewill";
 const version = "20220918";
 
 

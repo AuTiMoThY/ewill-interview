@@ -2,15 +2,21 @@
 
 $colors: map-merge(
     (
-        "Gray-00": #fff,
-        "Gray-01": #FAFAFA,
-        "Gray-02": #C7CCD1,
-        "Gray-03": #8F99A3,
-        "Gray-04": #454C54,
-        "Main": #ffe000,
-        "Sub-Yellow": #FFD166,
-        "Sub-Pink": #EF476F,
-        "System-Alert": #F95153,
-        "System-Ok": #2CC57A
+        "primary-1": #204379,
+        "primary-2": #B57556,
+        "primary-3": #DAE4F1,
+        "primary-4": #E2D9D3,
+        "primary-5": #D3C3B8,
+        "primary-6": #B3B960,
+        "primary-7": #A0BCC8,
+        "text-1": #000,
+        "text-2": #212121,
+        "text-3": #424242,
+        "text-4": #6C6C6C,
+        "text-5": #757575,
+        "text-6": #9E9E9E,
+        "text-7": #BDBDBD,
+        "text-8": #E0E0E0,
+        "text-9": #F5F5F5,
     ),$colors
 );

@@ -1,56 +1,86 @@
 // > text
-$txt-size: (
-    "H1": 54,
-    "H2": 36,
+$fz: (
+    "H1": 40,
+    "H2": 32,
     "H3": 24,
-    "H4": 18,
+    "H4": 20,
+    "H5": 18,
+    "Title": 16, 
     "Body": 16,
-    "Small": 12,
-    "Btn": 16
+    "Small": 11,
+    "Button-sm": 12,
+    "Button-md": 14,
+    "Button-lg": 16,
 );
+
+
 
 
 $txt-setting: (
     'H1': (
-        'fw': 900,
-        'fz': map-get($txt-size, 'H1'),
-        'lh': 81,
+        'fw': 700,
+        'fz': map-get($fz, 'H1'),
+        'lh': map-get($fz, 'H1') * 1.25,
         'ls': 1
     ),
     'H2': (
         'fw': 700,
-        'fz': map-get($txt-size, 'H2'),
-        'lh': 54,
+        'fz': map-get($fz, 'H2'),
+        'lh': map-get($fz, 'H2') * 1.25,
         'ls': 1
     ),
     'H3': (
         'fw': 700,
-        'fz': map-get($txt-size, 'H3'),
-        'lh': 36,
+        'fz': map-get($fz, 'H3'),
+        'lh': map-get($fz, 'H3') * 1.25,
         'ls': 1
     ),
     'H4': (
-        'fw': 500,
-        'fz': map-get($txt-size, 'H4'),
-        'lh': map-get($txt-size, 'H3') * 1.5,
+        'fw': 700,
+        'fz': map-get($fz, 'H4'),
+        'lh': map-get($fz, 'H4') * 1.4,
+        'ls': 1
+    ),
+    'H5': (
+        'fw': 700,
+        'fz': map-get($fz, 'H5'),
+        'lh': map-get($fz, 'H5') * 1.25,
+        'ls': 1
+    ),
+    'Title': (
+        'fw': 700,
+        'fz': map-get($fz, 'Title'),
+        'lh': map-get($fz, 'Title') * 1.4,
         'ls': 1
     ),
     'Body': (
         'fw': 400,
-        'fz': map-get($txt-size, 'Body'),
-        'lh': 24,
+        'fz': map-get($fz, 'Body'),
+        'lh': map-get($fz, 'Body') * 1.4,
         'ls': 1
     ),
     'Small': (
         'fw': 400,
-        'fz': map-get($txt-size, 'Small'),
-        'lh': 18,
+        'fz': map-get($fz, 'Small'),
+        'lh': map-get($fz, 'Small') * 1.4,
         'ls': 1
     ),
-    'Btn': (
-        'fw': 500,
-        'fz': map-get($txt-size, 'Btn'),
-        'lh': 24,
+    'Button-sm': (
+        'fw': 700,
+        'fz': map-get($fz, 'Button-sm'),
+        'lh': map-get($fz, 'Button-sm') * 1.125,
+        'ls': 1
+    ),
+    'Button-md': (
+        'fw': 700,
+        'fz': map-get($fz, 'Button-md'),
+        'lh': map-get($fz, 'Button-md') * 1.125,
+        'ls': 1
+    ),
+    'Button-lg': (
+        'fw': 700,
+        'fz': map-get($fz, 'Button-lg'),
+        'lh': map-get($fz, 'Button-lg') * 1.125,
         'ls': 1
     )
 );

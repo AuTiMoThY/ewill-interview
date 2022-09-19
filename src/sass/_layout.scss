@@ -1,23 +1,14 @@
 @import "layout/_base";
-@import "layout/_site_header";
-// @import "layout/_site_subheader";
-@import "layout/_site_logo";
-// @import "layout/_site_search";
-@import "layout/_site_footer";
-@import "layout/_site_nav";
-@import "layout/_page_main";
-// @import "layout/_page_main-aside";
-// @import "layout/_page_heading";
-@import "layout/_page_section";
-// @import "layout/_page_section-heading";
-// @import "layout/_05-nav";
-// @import "layout/_07-mask";
-
-// >> panel
-// @import "layout/_10-panel";
-
-// >> popup
-// @import "layout/_20-popup";
-// @import "layout/_21-dialog";
-// @import "layout/_22-confirm";
+// @import "layout/site_header";
+// @import "layout/site_subheader";
+// @import "layout/site_logo";
+// @import "layout/site_search";
+// @import "layout/site_footer";
+// @import "layout/site_nav";
+// @import "layout/page_main";
+// @import "layout/page_main-aside";
+// @import "layout/page_heading";
+// @import "layout/page_section";
+// @import "layout/page_section-heading";
+@import "layout/page_section-content";
 

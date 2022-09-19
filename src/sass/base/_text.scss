@@ -5,56 +5,18 @@
 	@include hide_txt;
 }
 
-@function fontWeight($name) {
-	@if $name == "L" {
-		@return 300;
-	}
-	@else if $name == "M" {
-		@return 500;
-	}
-	@else if $name == "B" {
-		@return 700;
-	}
-	@else if $name == "H" {
-		@return 900;
-	}
-}
 
 @mixin txt-($name) {
 
-	font-family: GenSekiGothic#{$name}, 'Noto Sans TC', sans-serif;
-	font-weight: fontWeight($name);
-	// @if map-has-key($txt-setting, $name) {
-	// 	@include txtSetting($NotoSansTC, $name);
-    // }
+	@if map-has-key($txt-setting, $name) {
+		@include txtSetting($NotoSansTC, $name);
+    }
 }
-
-@mixin txt-size($name) {
-	$fz: map-get(map-get($txt-setting, $name), 'fz');
-	@include remCalc(font-size, $fz);
-	@if $fz > 18 {
-		@include media-down($breakpoint-desktop-mobile) {
-			@include remCalc(font-size, $fz * 0.8);
-		}
-	}
-
-	@if $name == 'H2' {
-		@include media-down(md) {
-			@include remCalc(font-size, $fz * 0.7);
-		}
-	}
-
-    // @include media-down(sm) {
-    //     @include remCalc(font-size, $fz * 0.5);
-    // }
-	// @include remCalc(line-height, map-get(map-get($txt-setting, $name), 'lh'));
-}
-
 
 @each $name, $setting in $txt-setting {
 	@debug #{$name};
 	.txt-#{$name} {
-		@include txt-size($name);
+		// @include txt-size($name);
 	}
 }
 
